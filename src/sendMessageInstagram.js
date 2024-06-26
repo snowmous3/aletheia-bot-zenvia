@@ -3,7 +3,7 @@ const { post } = request_promise
 
 const sendMessage = (message) => {
   post({
-    uri: 'https://api.zenvia.com/v2/channels/whatsapp/messages',
+    uri: 'https://api.zenvia.com/v2/channels/instagram/messages',
     headers: {
       'X-API-TOKEN': 'YOUR TOKEN',
     },
@@ -13,7 +13,7 @@ const sendMessage = (message) => {
       contents: [
         {
           type: 'text',
-          text: 'Recebido',
+          text: 'Message here....',
         },
       ],
     },

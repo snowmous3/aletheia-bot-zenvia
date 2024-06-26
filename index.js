@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import sendMessageToWhatsApp from './src/sendMessageWpp.js'
+import sendMessageToInsta from './src/sendMessageInstagram.js'
 
 const app = express()
 const port = 3000
@@ -11,6 +12,11 @@ app.use(bodyParser.json())
 app.post('/hook', (req, res) => {
   res.status(200).end()
   sendMessageToWhatsApp(req.body.message)
+})
+
+app.post('/insta', (req, res) => {
+  res.status(200).end()
+  sendMessageToInsta(req.body.message)
 })
 
 app.get('/health', (req, res) => {
